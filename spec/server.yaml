@@ -1,0 +1,19 @@
+asyncapi: 2.0.0
+info:
+  title: Gate Manager Service
+  version: 1.0.0
+
+servers:
+  airportBroker:
+    url: broker.airport.com
+    protocol: amqp
+
+channels:
+  /updates:
+    subscribe:
+      operationId: example.handler
+      message:
+        payload:
+          type: object
+          properties:
+            name: string
